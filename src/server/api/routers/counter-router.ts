@@ -15,7 +15,7 @@ const counterRouter = createTRPCRouter({
         return { count };
     }),
     increment: publicProcedure.mutation(async () => {
-        count++;
+        return ++count;
     }),
     create: publicProcedure.input(z.object({ name: z.string().min(1) })).mutation(async ({ input }) => {
         const post: Post = {

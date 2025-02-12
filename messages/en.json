@@ -1,44 +1,45 @@
 {
-    "HomePage": {
-        "title": "Welcome to Ez-Stack",
-        "about": "Get started by editing this page",
-        "instructions": {
-            "editFile": "Get started by editing",
-            "saveChanges": "Save and see your changes instantly"
-        },
-        "buttons": {
-            "deploy": "Deploy on Vercel",
-            "theme": {
-                "text": "Toggle theme",
-                "ariaLabel": "Switch to {theme} theme"
-            },
-            "drag": "Drag me",
-            "toast": "Show Toast"
-        },
-        "toasts": {
-            "info": "This is an info message",
-            "error": "This is an error message",
-            "success": "This is a success message",
-            "warning": "This is a warning message"
-        },
-        "languages": {
-            "select": "Select language",
-            "en": "English",
-            "fr": "French",
-            "ar": "Arabic",
-            "popup": {
-                "title": "Choose your language",
-                "close": "Close language selector",
-                "current": "Current language: {language}"
-            }
-        },
-        "drag-me": "drag me",
-        "toggle-theme": "toggle theme",
-        "deploy-on-vercel": "Deploy on vercel",
-        "noopener-noreferrer": "noopener noreferrer",
-        "save-and-see-your-changes-instantly": "Save and see your changes instantly.",
-        "get-started-by-editing": "Get started by editing",
-        "next-js-logo": "Next.js logo",
-        "global-state": "global state"
-    }
+  "HomePage": {
+    "title": "Welcome to Ez-Stack",
+    "about": "Get started by editing this page",
+    "instructions": {
+      "editFile": "Get started by editing",
+      "saveChanges": "Save and see your changes instantly"
+    },
+    "buttons": {
+      "deploy": "Deploy on Vercel",
+      "theme": {
+        "text": "Toggle theme",
+        "ariaLabel": "Switch to {theme} theme"
+      },
+      "drag": "Drag me",
+      "toast": "Show Toast"
+    },
+    "toasts": {
+      "info": "This is an info message",
+      "error": "This is an error message",
+      "success": "This is a success message",
+      "warning": "This is a warning message"
+    },
+    "languages": {
+      "select": "Select language",
+      "en": "English",
+      "fr": "French",
+      "ar": "Arabic",
+      "popup": {
+        "title": "Choose your language",
+        "close": "Close language selector",
+        "current": "Current language: {language}"
+      }
+    },
+    "drag-me": "drag me",
+    "toggle-theme": "toggle theme",
+    "deploy-on-vercel": "Deploy on vercel",
+    "noopener-noreferrer": "noopener noreferrer",
+    "save-and-see-your-changes-instantly": "Save and see your changes instantly.",
+    "get-started-by-editing": "Get started by editing",
+    "next-js-logo": "Next.js logo",
+    "global-state": "global state"
+  },
+  "server-state": "server state"
 }

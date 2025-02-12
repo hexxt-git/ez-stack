@@ -2,7 +2,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { DraggableButton, IncrementButton, ServerIncrementButton, ToastButton, useStore } from "./components/ClientSideComponents";
+import {
+    DraggableButton,
+    IncrementButton,
+    ServerIncrementButton,
+    ToastButton,
+    useStore,
+} from "./components/ClientSideComponents";
 import { LanguageSwitch } from "@/components/language-switch";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { api, HydrateClient } from "@/lib/server";
@@ -10,7 +16,7 @@ import { api, HydrateClient } from "@/lib/server";
 export default async function Home() {
     const t = await getTranslations("HomePage");
 
-    const hello = await api.example.hello({ text: "from tRPC" });
+    const hello = await api.example.hello("from tRPC");
     const random = await api.example.random();
 
     return (
@@ -67,5 +73,3 @@ export default async function Home() {
         </HydrateClient>
     );
 }
-
-

@@ -57,14 +57,25 @@ export function IncrementButton() {
 import { api } from "@/lib/react-trpc";
 
 export function ServerIncrementButton() {
-    const [count] = api.counter.state.useSuspenseQuery();
+    const t = useTranslations();
+    const { data: count } = api.counter.state.useQuery();
 
-    const utils = api.useUtils();
+    // const utils = api.useUtils();
     const increment = api.counter.increment.useMutation({
-        onSuccess: async () => {
-            await utils.counter.invalidate();
+        onMutate: async () => {
+            count.count++;
         },
+        onSettled: async () => {
+            // await utils.counter.invalidate();
+        },
+        onSuccess: (data) => {
+            count.count = data;
+        }
     });
 
-    return <Button onClick={() => increment.mutate()}>server state: {count.count}</Button>;
+    return (
+        <Button onClick={() => increment.mutate()}>
+            {t("server-state")}: {count?.count}
+        </Button>
+    );
 }

@@ -1,47 +1,49 @@
 {
-    "HomePage": {
-        "title": "Bienvenue sur Ez-Stack",
-        "about": "Commencez par modifier cette page",
-        "instructions": {
-            "editFile": "Commencez par modifier",
-            "saveChanges": "Sauvegardez et voyez vos changements instantanément"
-        },
-        "input": {
-            "label": "Exemple de champ"
-        },
-        "buttons": {
-            "deploy": "Déployer sur Vercel",
-            "theme": {
-                "text": "Changer le thème",
-                "ariaLabel": "Passer au thème {theme}"
-            },
-            "drag": "Faites-moi glisser",
-            "toast": "Afficher la notification"
-        },
-        "toasts": {
-            "info": "Ceci est un message d'information",
-            "error": "Ceci est un message d'erreur",
-            "success": "Ceci est un message de succès",
-            "warning": "Ceci est un message d'avertissement"
-        },
-        "languages": {
-            "select": "Choisir la langue",
-            "en": "Anglais",
-            "fr": "Français",
-            "ar": "Arabe",
-            "popup": {
-                "title": "Choisissez votre langue",
-                "close": "Fermer le sélecteur de langue",
-                "current": "Langue actuelle : {language}"
-            }
-        },
-        "drag-me": "faites-moi glisser",
-        "toggle-theme": "changer le thème",
-        "deploy-on-vercel": "déployer sur Vercel",
-        "noopener-noreferrer": "noopener noreferrer",
-        "save-and-see-your-changes-instantly": "sauvegardez et voyez vos changements instantanément",
-        "get-started-by-editing": "commencez par modifier",
-        "next-js-logo": "logo Next.js",
-        "state": "État"
-    }
+  "HomePage": {
+    "title": "Bienvenue sur Ez-Stack",
+    "about": "Commencez par modifier cette page",
+    "instructions": {
+      "editFile": "Commencez par modifier",
+      "saveChanges": "Sauvegardez et voyez vos changements instantanément"
+    },
+    "input": {
+      "label": "Exemple de champ"
+    },
+    "buttons": {
+      "deploy": "Déployer sur Vercel",
+      "theme": {
+        "text": "Changer le thème",
+        "ariaLabel": "Passer au thème {theme}"
+      },
+      "drag": "Faites-moi glisser",
+      "toast": "Afficher la notification"
+    },
+    "toasts": {
+      "info": "Ceci est un message d'information",
+      "error": "Ceci est un message d'erreur",
+      "success": "Ceci est un message de succès",
+      "warning": "Ceci est un message d'avertissement"
+    },
+    "languages": {
+      "select": "Choisir la langue",
+      "en": "Anglais",
+      "fr": "Français",
+      "ar": "Arabe",
+      "popup": {
+        "title": "Choisissez votre langue",
+        "close": "Fermer le sélecteur de langue",
+        "current": "Langue actuelle : {language}"
+      }
+    },
+    "drag-me": "faites-moi glisser",
+    "toggle-theme": "changer le thème",
+    "deploy-on-vercel": "déployer sur Vercel",
+    "noopener-noreferrer": "noopener noreferrer",
+    "save-and-see-your-changes-instantly": "sauvegardez et voyez vos changements instantanément",
+    "get-started-by-editing": "commencez par modifier",
+    "next-js-logo": "logo Next.js",
+    "state": "État",
+    "global-state": "État mondial"
+  },
+  "server-state": "état du serveur"
 }
