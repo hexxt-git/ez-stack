@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { LanguagePopup, ThemeToggle, DraggableButton, ToastButton } from "./components/ClientSideComponents";
+import { DraggableButton, IncrementButton, ToastButton, useStore } from "./components/ClientSideComponents";
+import { LanguageSwitch } from "@/components/language-switch";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default async function Home() {
     const t = await getTranslations("HomePage");
@@ -16,8 +16,8 @@ export default async function Home() {
                     className="dark:invert"
                     src="/next.svg"
                     alt="Next.js logo"
-                    width={180}
-                    height={38}
+                    width={360}
+                    height={80}
                     priority
                 />
 
@@ -50,7 +50,8 @@ export default async function Home() {
                     <ThemeToggle />
                     <DraggableButton />
                     <ToastButton />
-                    <LanguagePopup />
+                    <LanguageSwitch />
+                    <IncrementButton />
                 </section>
             </main>
         </div>

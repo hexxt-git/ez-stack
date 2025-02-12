@@ -1,13 +1,10 @@
 {
     "HomePage": {
-        "title": "Welcome to Next.js",
+        "title": "Welcome to Ez-Stack",
         "about": "Get started by editing this page",
         "instructions": {
             "editFile": "Get started by editing",
             "saveChanges": "Save and see your changes instantly"
-        },
-        "input": {
-            "label": "Example input"
         },
         "buttons": {
             "deploy": "Deploy on Vercel",
@@ -41,6 +38,7 @@
         "noopener-noreferrer": "noopener noreferrer",
         "save-and-see-your-changes-instantly": "Save and see your changes instantly.",
         "get-started-by-editing": "Get started by editing",
-        "next-js-logo": "Next.js logo"
+        "next-js-logo": "Next.js logo",
+        "state": "state"
     }
 }

@@ -1,6 +1,6 @@
 {
     "HomePage": {
-        "title": "Bienvenue sur Next.js",
+        "title": "Bienvenue sur Ez-Stack",
         "about": "Commencez par modifier cette page",
         "instructions": {
             "editFile": "Commencez par modifier",
@@ -39,9 +39,9 @@
         "toggle-theme": "changer le thème",
         "deploy-on-vercel": "déployer sur Vercel",
         "noopener-noreferrer": "noopener noreferrer",
-        "example-input": "exemple de champ",
         "save-and-see-your-changes-instantly": "sauvegardez et voyez vos changements instantanément",
         "get-started-by-editing": "commencez par modifier",
-        "next-js-logo": "logo Next.js"
+        "next-js-logo": "logo Next.js",
+        "state": "État"
     }
 }

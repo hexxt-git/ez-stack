@@ -1,6 +1,6 @@
 {
     "HomePage": {
-        "title": "مرحباً بك في Next.js",
+        "title": "مرحباً بك في Ez-Stack",
         "about": "ابدأ بتحرير هذه الصفحة",
         "instructions": {
             "editFile": "ابدأ بتحرير",
@@ -39,9 +39,9 @@
         "toggle-theme": "تبديل السمة",
         "deploy-on-vercel": "نشر على Vercel",
         "noopener-noreferrer": "noopener noreferrer",
-        "example-input": "مثال على حقل الإدخال",
         "save-and-see-your-changes-instantly": "احفظ وشاهد تغييراتك فوراً",
         "get-started-by-editing": "ابدأ بتحرير",
-        "next-js-logo": "شعار Next.js"
+        "next-js-logo": "شعار Next.js",
+        "state": "الحالة"
     }
 }
