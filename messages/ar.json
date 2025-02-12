@@ -1,0 +1,47 @@
+{
+    "HomePage": {
+        "title": "مرحباً بك في Next.js",
+        "about": "ابدأ بتحرير هذه الصفحة",
+        "instructions": {
+            "editFile": "ابدأ بتحرير",
+            "saveChanges": "احفظ وشاهد تغييراتك فوراً"
+        },
+        "input": {
+            "label": "مثال على حقل الإدخال"
+        },
+        "buttons": {
+            "deploy": "نشر على Vercel",
+            "theme": {
+                "text": "تبديل السمة",
+                "ariaLabel": "التبديل إلى السمة {theme}"
+            },
+            "drag": "اسحبني",
+            "toast": "إظهار الإشعار"
+        },
+        "toasts": {
+            "info": "هذه رسالة معلومات",
+            "error": "هذه رسالة خطأ",
+            "success": "هذه رسالة نجاح",
+            "warning": "هذه رسالة تحذير"
+        },
+        "languages": {
+            "select": "اختر اللغة",
+            "en": "الإنجليزية",
+            "fr": "الفرنسية",
+            "ar": "العربية",
+            "popup": {
+                "title": "اختر لغتك",
+                "close": "إغلاق محدد اللغة",
+                "current": "اللغة الحالية: {language}"
+            }
+        },
+        "drag-me": "اسحبني",
+        "toggle-theme": "تبديل السمة",
+        "deploy-on-vercel": "نشر على Vercel",
+        "noopener-noreferrer": "noopener noreferrer",
+        "example-input": "مثال على حقل الإدخال",
+        "save-and-see-your-changes-instantly": "احفظ وشاهد تغييراتك فوراً",
+        "get-started-by-editing": "ابدأ بتحرير",
+        "next-js-logo": "شعار Next.js"
+    }
+}
