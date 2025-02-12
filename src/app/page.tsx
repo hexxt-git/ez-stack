@@ -1,4 +1,4 @@
-"use client";
+"use client"; // remvoe to enable ssr
 
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { motion } from "motion/react";
 
 export default function Home() {
     const theme = useTheme();
@@ -47,6 +48,14 @@ export default function Home() {
                     <Button variant="outline" onClick={toggleTheme}>
                         toggle theme
                     </Button>
+                    <motion.div
+                        drag
+                        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+                        dragElastic={0.3}
+                        dragMomentum={false}
+                    >
+                        <Button variant="secondary">drag me</Button>
+                    </motion.div>
                 </div>
             </main>
         </div>
