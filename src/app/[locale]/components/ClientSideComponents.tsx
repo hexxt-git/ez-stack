@@ -50,7 +50,21 @@ export function IncrementButton() {
 
     return (
         <Button variant="secondary" onClick={increment}>
-            {t("state")}: {value}
+            {t("global-state")}: {value}
         </Button>
     );
+}
+import { api } from "@/lib/react-trpc";
+
+export function ServerIncrementButton() {
+    const [count] = api.counter.state.useSuspenseQuery();
+
+    const utils = api.useUtils();
+    const increment = api.counter.increment.useMutation({
+        onSuccess: async () => {
+            await utils.counter.invalidate();
+        },
+    });
+
+    return <Button onClick={() => increment.mutate()}>server state: {count.count}</Button>;
 }

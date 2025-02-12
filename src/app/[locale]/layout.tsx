@@ -7,6 +7,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "@/components/ui/sonner";
+import { TRPCReactProvider } from "@/lib/react-trpc";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -49,23 +50,25 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} suppressHydrationWarning>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-                dir={locale === "ar" ? "rtl" : "ltr"}
-            >
-                <NextIntlClientProvider messages={messages}>
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="system"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
-                        <Toaster position={locale === "ar" ? "bottom-left" : "bottom-right"} richColors />
-                        {children}
-                    </ThemeProvider>
-                </NextIntlClientProvider>
-            </body>
-        </html>
+        <TRPCReactProvider>
+            <html lang={locale} suppressHydrationWarning>
+                <body
+                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                    dir={locale === "ar" ? "rtl" : "ltr"}
+                >
+                    <NextIntlClientProvider messages={messages}>
+                        <ThemeProvider
+                            attribute="class"
+                            defaultTheme="system"
+                            enableSystem
+                            disableTransitionOnChange
+                        >
+                            <Toaster position={locale === "ar" ? "bottom-left" : "bottom-right"} richColors />
+                            {children}
+                        </ThemeProvider>
+                    </NextIntlClientProvider>
+                </body>
+            </html>
+        </TRPCReactProvider>
     );
 }
