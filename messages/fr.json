@@ -43,7 +43,18 @@
     "get-started-by-editing": "commencez par modifier",
     "next-js-logo": "logo Next.js",
     "state": "État",
-    "global-state": "État mondial"
+    "global-state": "État mondial",
+    "tech": {
+      "clerk": "Authentification et gestion des utilisateurs pour votre application",
+      "mongoose": "Modélisation d'objets MongoDB élégante pour Node.js",
+      "nextIntl": "Internationalisation simple et support de traduction",
+      "nextJs": "Rendu côté serveur et routage basé sur les fichiers",
+      "nextThemes": "Gère dynamiquement les modes clairs / sombres",
+      "shadcnUi": "Composants d'interface utilisateur accessibles et préconçus",
+      "tailwindCss": "Framework de style utilitaire d'abord",
+      "trpc": "API de bout en bout de type avec nulle partage",
+      "zustand": "Gestion minimale et efficace de l'État mondial"
+    }
   },
   "server-state": "état du serveur"
 }

@@ -60,13 +60,13 @@ export function ServerIncrementButton() {
     const t = useTranslations();
     const { data: count } = api.counter.state.useQuery();
 
-    // const utils = api.useUtils();
+    const utils = api.useUtils();
     const increment = api.counter.increment.useMutation({
         onMutate: async () => {
             count.count++;
         },
-        onSettled: async () => {
-            // await utils.counter.invalidate();
+        onError: async () => {
+            await utils.counter.invalidate();
         },
         onSuccess: (data) => {
             count.count = data;

@@ -32,6 +32,17 @@
         "current": "Current language: {language}"
       }
     },
+    "tech": {
+      "nextJs": "Server-side rendering and file-based routing",
+      "nextIntl": "Simple internationalization and translation support",
+      "nextThemes": "Dynamically handles light/dark modes",
+      "tailwindCss": "Utility-first styling framework",
+      "shadcnUi": "Accessible, prebuilt UI components",
+      "zustand": "Minimal and efficient global state management",
+      "trpc": "Type-safe end-to-end APIs with zero boilerplate",
+      "mongoose": "Elegant MongoDB object modeling for Node.js",
+      "clerk": "Authentication and user management for your application"
+    },
     "drag-me": "drag me",
     "toggle-theme": "toggle theme",
     "deploy-on-vercel": "Deploy on vercel",

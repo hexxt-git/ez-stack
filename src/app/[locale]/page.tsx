@@ -23,34 +23,45 @@ export default async function Home() {
         <HydrateClient>
             <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
                 <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                    <Image
-                        className="dark:invert"
-                        src="/next.svg"
-                        alt="Next.js logo"
-                        width={360}
-                        height={80}
-                        priority
-                    />
-
                     <section aria-labelledby="main-heading">
-                        <h1 id="main-heading" className="text-3xl">
+                        <h1 id="main-heading" className="text-7xl tracking-tighter font-semibold">
                             {t("title")}
                         </h1>
-                        <h2 className="text-lg">{t("about")}</h2>
-                        <h3>
+                        <h2 className="text-xl">{t("about")}</h2>
+                        <h3 className="text-lg">
                             {hello.greeting} {random}
                         </h3>
                     </section>
 
                     <section aria-label="Getting Started Instructions">
-                        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-                            <li className="mb-2">
-                                {t("instructions.editFile")}{" "}
-                                <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded-sm font-semibold">
-                                    src/app/page.tsx
-                                </code>
+                        <ol className="list-inside list-decimal text-center sm:text-start font-[family-name:var(--font-geist-mono)] space-y-2">
+                            <li>
+                                <strong>Next.js</strong>: {t("tech.nextJs")}
                             </li>
-                            <li>{t("instructions.saveChanges")}</li>
+                            <li>
+                                <strong>Next-Intl</strong>: {t("tech.nextIntl")}
+                            </li>
+                            <li>
+                                <strong>Next-Themes</strong>: {t("tech.nextThemes")}
+                            </li>
+                            <li>
+                                <strong>Tailwind CSS</strong>: {t("tech.tailwindCss")}
+                            </li>
+                            <li>
+                                <strong>Shadcn-UI</strong>: {t("tech.shadcnUi")}
+                            </li>
+                            <li>
+                                <strong>Zustand</strong>: {t("tech.zustand")}
+                            </li>
+                            <li>
+                                <strong>tRPC</strong>: {t("tech.trpc")}
+                            </li>
+                            <li>
+                                <strong>Mongoose</strong>: {t("tech.mongoose")}
+                            </li>
+                            <li>
+                                <strong>Clerk</strong>: {t("tech.clerk")}
+                            </li>
                         </ol>
                     </section>
 
