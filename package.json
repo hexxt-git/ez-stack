@@ -12,6 +12,8 @@
         "removeC": "npx shadcn@canary remove "
     },
     "dependencies": {
+        "@clerk/nextjs": "^6.12.0",
+        "@clerk/themes": "^2.2.19",
         "@radix-ui/react-label": "^2.1.2",
         "@radix-ui/react-popover": "^1.1.6",
         "@radix-ui/react-select": "^2.1.6",
@@ -45,6 +47,8 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "eslint": "9.21.0",
+        "eslint-config-next": "15.1.7",
         "postcss": "^8",
         "tailwindcss": "^4.0.0",
         "typescript": "^5"

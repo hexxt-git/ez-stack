@@ -4,6 +4,8 @@ import Link from "next/link";
 import "@/app/globals.css";
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
+    console.error(error);
+    
     return (
         <html>
             <body className="bg-gray-50">

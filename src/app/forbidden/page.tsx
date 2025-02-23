@@ -10,7 +10,7 @@ export default function Forbidden() {
                         <h1 className="text-6xl font-bold text-gray-900 mb-4">403</h1>
                         <h2 className="text-3xl font-semibold text-gray-800 mb-4">Access Forbidden</h2>
                         <p className="text-lg text-gray-600 mb-8">
-                            Sorry, you don't have permission to access this page.
+                            Sorry, you don&#39;t have permission to access this page.
                         </p>
                         <Link
                             href="/"

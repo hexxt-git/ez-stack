@@ -58,24 +58,25 @@ import { api } from "@/lib/react-trpc";
 
 export function ServerIncrementButton() {
     const t = useTranslations();
-    const { data: count } = api.counter.state.useQuery();
+    const { data } = api.counter.state.useQuery();
 
     const utils = api.useUtils();
     const increment = api.counter.increment.useMutation({
         onMutate: async () => {
-            count.count++;
+            data.count++;
         },
         onError: async () => {
+            toast.error("Error Incrementing");
             await utils.counter.invalidate();
         },
-        onSuccess: (data) => {
-            count.count = data;
-        }
+        onSuccess: (newCount) => {
+            if (data) data.count = newCount;
+        },
     });
 
     return (
         <Button onClick={() => increment.mutate()}>
-            {t("server-state")}: {count?.count}
+            {t("server-state")}: {data?.count ?? "loading..."}
         </Button>
     );
 }

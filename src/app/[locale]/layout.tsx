@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "@/components/ui/sonner";
 import { TRPCReactProvider } from "@/lib/react-trpc";
+import { ClerkThemeProvider } from "@/components/clerk-theme-provider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -35,7 +36,7 @@ export default async function LocaleLayout({
     children: React.ReactNode;
     params: Promise<{ locale: string }>;
 }) {
-    let { locale } = await params;
+    const { locale } = await params;
 
     // Ensure that the incoming `locale` is valid
     if (!routing.locales.includes(locale as any)) {
@@ -63,8 +64,13 @@ export default async function LocaleLayout({
                             enableSystem
                             disableTransitionOnChange
                         >
-                            <Toaster position={locale === "ar" ? "bottom-left" : "bottom-right"} richColors />
-                            {children}
+                            <ClerkThemeProvider>
+                                <Toaster
+                                    position={locale === "ar" ? "bottom-left" : "bottom-right"}
+                                    richColors
+                                />
+                                {children}
+                            </ClerkThemeProvider>
                         </ThemeProvider>
                     </NextIntlClientProvider>
                 </body>
