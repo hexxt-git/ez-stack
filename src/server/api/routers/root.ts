@@ -1,6 +1,6 @@
 import exampleRouter from "@/server/api/routers/example";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
-import counterRouter from "./routers/counter-router";
+import counterRouter from "./counter-router";
 
 /**
  * This is the primary router for your server.

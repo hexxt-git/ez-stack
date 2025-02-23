@@ -1,15 +1,14 @@
 import { initTRPC } from "@trpc/server";
-import superjson from "superjson";
+import { NextRequest } from "next/server";
 import { ZodError } from "zod";
 
-export const createTRPCContext = async (opts: { headers: Headers }) => {
+export const createTRPCContext = async (opts: { req: NextRequest }) => {
     return {
         ...opts,
     };
 };
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
-    transformer: superjson,
     errorFormatter({ shape, error }) {
         return {
             ...shape,

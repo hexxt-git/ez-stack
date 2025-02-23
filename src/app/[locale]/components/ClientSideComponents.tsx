@@ -20,8 +20,14 @@ export function DraggableButton() {
     );
 }
 
+const useToastIndexState = create<{ index: number; increment: () => void }>((set) => ({
+    index: 0,
+    increment: () => set(({ index: i }) => ({ index: i + 1 })),
+}));
+
 export function ToastButton() {
     const t = useTranslations("HomePage");
+    const { index, increment } = useToastIndexState();
 
     const showRandomToast = () => {
         const messages = [
@@ -30,7 +36,8 @@ export function ToastButton() {
             () => toast.success(t("toasts.success")),
             () => toast.warning(t("toasts.warning")),
         ];
-        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        const randomMessage = messages[index % messages.length];
+        increment();
         randomMessage();
     };
 
@@ -54,28 +61,26 @@ export function IncrementButton() {
         </Button>
     );
 }
-import { api } from "@/lib/react-trpc";
+
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { useTRPC } from "@/components/client-query-client";
 
 export function ServerIncrementButton() {
     const t = useTranslations();
-    const { data: count } = api.counter.state.useQuery();
+    const trpc = useTRPC();
 
-    const utils = api.useUtils();
-    const increment = api.counter.increment.useMutation({
-        onMutate: async () => {
-            count.count++;
-        },
-        onError: async () => {
-            await utils.counter.invalidate();
-        },
-        onSuccess: (data) => {
-            count.count = data;
-        }
-    });
+    const query = useQuery(trpc.counter.state.queryOptions());
+    const mutation = useMutation(trpc.counter.increment.mutationOptions());
+
+    const increment = () => {
+        mutation.mutate();
+        query.data.count++;
+        query.refetch();
+    };
 
     return (
-        <Button onClick={() => increment.mutate()}>
-            {t("server-state")}: {count?.count}
+        <Button onClick={increment}>
+            {t("server-state")}: {!query.isLoading ? query.data.count : "loading..."}
         </Button>
     );
 }

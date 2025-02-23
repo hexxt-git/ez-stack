@@ -7,7 +7,8 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "@/components/ui/sonner";
-import { TRPCReactProvider } from "@/lib/react-trpc";
+import { withTRPC } from "@trpc/next";
+import { TRPCReactProvider } from "@/components/client-query-client";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -50,12 +51,12 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <TRPCReactProvider>
-            <html lang={locale} suppressHydrationWarning>
-                <body
-                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-                    dir={locale === "ar" ? "rtl" : "ltr"}
-                >
+        <html lang={locale} suppressHydrationWarning>
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                dir={locale === "ar" ? "rtl" : "ltr"}
+            >
+                <TRPCReactProvider>
                     <NextIntlClientProvider messages={messages}>
                         <ThemeProvider
                             attribute="class"
@@ -67,8 +68,8 @@ export default async function LocaleLayout({
                             {children}
                         </ThemeProvider>
                     </NextIntlClientProvider>
-                </body>
-            </html>
-        </TRPCReactProvider>
+                </TRPCReactProvider>
+            </body>
+        </html>
     );
 }

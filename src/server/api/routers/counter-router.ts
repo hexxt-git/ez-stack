@@ -1,29 +1,15 @@
 import { createTRPCRouter, publicProcedure } from "../trpc";
-import { z } from "zod";
 
 let count = 0;
 
-type Post = {
-    id: number;
-    name: string;
-};
-
-const posts: Post[] = [];
-
 const counterRouter = createTRPCRouter({
-    state: publicProcedure.query(() => {
+    state: publicProcedure.query(({ctx}) => {
+        console.log(ctx)
         return { count };
     }),
-    increment: publicProcedure.mutation(async () => {
+    increment: publicProcedure.mutation(() => {
+        if (Math.random() < 0.3) throw new Error('random error')
         return ++count;
-    }),
-    create: publicProcedure.input(z.object({ name: z.string().min(1) })).mutation(async ({ input }) => {
-        const post: Post = {
-            id: posts.length + 1,
-            name: input.name,
-        };
-        posts.push(post);
-        return post;
     }),
 });
 

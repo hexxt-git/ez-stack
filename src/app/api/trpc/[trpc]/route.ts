@@ -1,7 +1,7 @@
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { type NextRequest } from "next/server";
 
-import { appRouter } from "@/server/api/root";
+import { appRouter } from "@/server/api/routers/root";
 import { createTRPCContext } from "@/server/api/trpc";
 
 /**
@@ -10,7 +10,7 @@ import { createTRPCContext } from "@/server/api/trpc";
  */
 const createContext = async (req: NextRequest) => {
     return createTRPCContext({
-        headers: req.headers,
+        req: req,
     });
 };
 
