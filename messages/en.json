@@ -50,7 +50,10 @@
     "save-and-see-your-changes-instantly": "Save and see your changes instantly.",
     "get-started-by-editing": "Get started by editing",
     "next-js-logo": "Next.js logo",
-    "global-state": "global state"
-  },
-  "server-state": "server state"
+    "global-state": "global state",
+    "server-state": "server state",
+    "input": {
+      "label": "example input"
+    }
+  }
 }

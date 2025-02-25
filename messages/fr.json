@@ -1,60 +1,60 @@
 {
-  "HomePage": {
-    "title": "Bienvenue sur Ez-Stack",
-    "about": "Commencez par modifier cette page",
-    "instructions": {
-      "editFile": "Commencez par modifier",
-      "saveChanges": "Sauvegardez et voyez vos changements instantanément"
-    },
-    "input": {
-      "label": "Exemple de champ"
-    },
-    "buttons": {
-      "deploy": "Déployer sur Vercel",
-      "theme": {
-        "text": "Changer le thème",
-        "ariaLabel": "Passer au thème {theme}"
-      },
-      "drag": "Faites-moi glisser",
-      "toast": "Afficher la notification"
-    },
-    "toasts": {
-      "info": "Ceci est un message d'information",
-      "error": "Ceci est un message d'erreur",
-      "success": "Ceci est un message de succès",
-      "warning": "Ceci est un message d'avertissement"
-    },
-    "languages": {
-      "select": "Choisir la langue",
-      "en": "Anglais",
-      "fr": "Français",
-      "ar": "Arabe",
-      "popup": {
-        "title": "Choisissez votre langue",
-        "close": "Fermer le sélecteur de langue",
-        "current": "Langue actuelle : {language}"
-      }
-    },
-    "drag-me": "faites-moi glisser",
-    "toggle-theme": "changer le thème",
-    "deploy-on-vercel": "déployer sur Vercel",
-    "noopener-noreferrer": "noopener noreferrer",
-    "save-and-see-your-changes-instantly": "sauvegardez et voyez vos changements instantanément",
-    "get-started-by-editing": "commencez par modifier",
-    "next-js-logo": "logo Next.js",
-    "state": "État",
-    "global-state": "État mondial",
-    "tech": {
-      "clerk": "Authentification et gestion des utilisateurs pour votre application",
-      "mongoose": "Modélisation d'objets MongoDB élégante pour Node.js",
-      "nextIntl": "Internationalisation simple et support de traduction",
-      "nextJs": "Rendu côté serveur et routage basé sur les fichiers",
-      "nextThemes": "Gère dynamiquement les modes clairs / sombres",
-      "shadcnUi": "Composants d'interface utilisateur accessibles et préconçus",
-      "tailwindCss": "Framework de style utilitaire d'abord",
-      "trpc": "API de bout en bout de type avec nulle partage",
-      "zustand": "Gestion minimale et efficace de l'État mondial"
+    "HomePage": {
+        "title": "Bienvenue sur Ez-Stack",
+        "about": "Commencez par modifier cette page",
+        "instructions": {
+            "editFile": "Commencez par modifier",
+            "saveChanges": "Sauvegardez et voyez vos changements instantanément"
+        },
+        "input": {
+            "label": "Exemple de champ"
+        },
+        "buttons": {
+            "deploy": "Déployer sur Vercel",
+            "theme": {
+                "text": "Changer le thème",
+                "ariaLabel": "Passer au thème {theme}"
+            },
+            "drag": "Faites-moi glisser",
+            "toast": "Afficher la notification"
+        },
+        "toasts": {
+            "info": "Ceci est un message d'information",
+            "error": "Ceci est un message d'erreur",
+            "success": "Ceci est un message de succès",
+            "warning": "Ceci est un message d'avertissement"
+        },
+        "languages": {
+            "select": "Choisir la langue",
+            "en": "Anglais",
+            "fr": "Français",
+            "ar": "Arabe",
+            "popup": {
+                "title": "Choisissez votre langue",
+                "close": "Fermer le sélecteur de langue",
+                "current": "Langue actuelle : {language}"
+            }
+        },
+        "drag-me": "faites-moi glisser",
+        "toggle-theme": "changer le thème",
+        "deploy-on-vercel": "déployer sur Vercel",
+        "noopener-noreferrer": "noopener noreferrer",
+        "save-and-see-your-changes-instantly": "sauvegardez et voyez vos changements instantanément",
+        "get-started-by-editing": "commencez par modifier",
+        "next-js-logo": "logo Next.js",
+        "state": "État",
+        "global-state": "État mondial",
+        "tech": {
+            "clerk": "Authentification et gestion des utilisateurs pour votre application",
+            "mongoose": "Modélisation d'objets MongoDB élégante pour Node.js",
+            "nextIntl": "Internationalisation simple et support de traduction",
+            "nextJs": "Rendu côté serveur et routage basé sur les fichiers",
+            "nextThemes": "Gère dynamiquement les modes clairs / sombres",
+            "shadcnUi": "Composants d'interface utilisateur accessibles et préconçus",
+            "tailwindCss": "Framework de style utilitaire d'abord",
+            "trpc": "API de bout en bout de type avec nulle partage",
+            "zustand": "Gestion minimale et efficace de l'État mondial"
+        },
+        "server-state": "état du serveur"
     }
-  },
-  "server-state": "état du serveur"
 }

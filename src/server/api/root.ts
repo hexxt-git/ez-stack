@@ -9,7 +9,7 @@ import counterRouter from "./routers/counter-router";
  */
 export const appRouter = createTRPCRouter({
     example: exampleRouter,
-    counter: counterRouter
+    counter: counterRouter,
 });
 
 // export type definition of API

@@ -57,7 +57,7 @@ export function IncrementButton() {
 import { api } from "@/lib/react-trpc";
 
 export function ServerIncrementButton() {
-    const t = useTranslations();
+    const t = useTranslations("HomePage");
     const { data } = api.counter.state.useQuery();
 
     const utils = api.useUtils();
@@ -77,6 +77,21 @@ export function ServerIncrementButton() {
     return (
         <Button onClick={() => increment.mutate()}>
             {t("server-state")}: {data?.count ?? "loading..."}
+        </Button>
+    );
+}
+export function ProtectedData() {
+    const { data, refetch } = api.example.secret.useQuery(undefined, { enabled: false });
+
+    const getSecret = () => {
+        refetch();
+        if (data) toast(data);
+        else toast.error("couldnt get secret");
+    };
+
+    return (
+        <Button onClick={getSecret} variant="secondary">
+            get secret
         </Button>
     );
 }

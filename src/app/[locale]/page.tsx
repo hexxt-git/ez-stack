@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import {
     DraggableButton,
     IncrementButton,
+    ProtectedData,
     ServerIncrementButton,
     ToastButton,
 } from "./components/ClientSideComponents";
@@ -76,14 +77,11 @@ export default async function Home() {
                     <LanguageSwitch />
                     <IncrementButton />
                     <ServerIncrementButton />
-                    <SignedOut>
-                        <SignInButton>
-                            <Button variant="outline">Sign In</Button>
-                        </SignInButton>
-                    </SignedOut>
-                    <SignedIn>
-                        <UserButton />
-                    </SignedIn>
+                    <SignInButton>
+                        <Button variant="outline">Sign In</Button>
+                    </SignInButton>
+                    <UserButton />
+                    <ProtectedData />
                 </section>
             </main>
         </div>
