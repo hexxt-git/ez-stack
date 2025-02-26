@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { createTRPCRouter, privateProcedure, publicProcedure } from "@/server/api/trpc";
+import { createTRPCRouter, privateProcedure, publicProcedure } from "@/server/trpc";
 
 const exampleRouter = createTRPCRouter({
     hello: publicProcedure.input(z.string()).query(({ input }) => {

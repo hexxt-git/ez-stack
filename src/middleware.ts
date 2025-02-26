@@ -4,7 +4,7 @@ import { routing } from "@/i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-const isProtectedRoute = createRouteMatcher(["/(en|fr|ar)/user(.*)"]);
+const isProtectedRoute = createRouteMatcher(["/(en|fr|ar)/posts(.*)"]);
 
 export default clerkMiddleware(async (auth, request) => {
     if (isProtectedRoute(request)) await auth.protect();
