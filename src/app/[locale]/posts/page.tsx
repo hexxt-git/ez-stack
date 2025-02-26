@@ -48,7 +48,7 @@ export default function PostsPage() {
                         Send
                     </Button>
                 </form>
-                {posts.length > 0
+                {posts
                     ? posts.map((post) => (
                           <div key={post.id} className="border rounded p-4 w-full space-y-4">
                               <h2 className="text-xl font-medium break-all">
@@ -60,7 +60,7 @@ export default function PostsPage() {
                                   {post.author.lastName} {post.author.firstName}{" "}
                               </h2>
                               <p>{post.content}</p>
-                              {post.authorId === user.id && (
+                              {post.authorId === user?.id && (
                                   <Button
                                       variant="destructive"
                                       size="sm"

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { createTRPCRouter, privateProcedure } from "../trpc";
-import { prisma } from "../prisma";
+import { prisma } from "@/server/prisma";
 import { clerkClient } from "@clerk/nextjs/server";
 
 const clerk = clerkClient();
