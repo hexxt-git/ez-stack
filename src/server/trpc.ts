@@ -3,7 +3,7 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 // todo find the type
-export const createTRPCContext = async (opts: { user: any }) => {
+export const createTRPCContext = async (opts: { auth?: any; user?: any }) => {
     return {
         ...opts,
     };
@@ -37,7 +37,7 @@ const timingMiddleware = t.middleware(async ({ next, path }) => {
 });
 
 const authMiddleware = t.middleware(async ({ next, ctx }) => {
-    if (!ctx.user.userId) throw new TRPCError({ code: "UNAUTHORIZED" });
+    if (!ctx.user?.userId && !ctx.auth?.userId) throw new TRPCError({ code: "UNAUTHORIZED" });
 
     return await next();
 });

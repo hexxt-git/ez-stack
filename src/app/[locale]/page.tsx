@@ -4,7 +4,6 @@ import { getTranslations } from "next-intl/server";
 import {
     DraggableButton,
     IncrementButton,
-    ProtectedData,
     ServerIncrementButton,
     ToastButton,
 } from "./components/ClientSideComponents";
@@ -17,7 +16,6 @@ export default async function Home() {
     const t = await getTranslations("HomePage");
 
     const hello = await api.example.hello("from tRPC");
-    const random = await api.example.random();
 
     return (
         <div className="flex items-center justify-center min-h-screen p-4 pb-20 gap-16 sm:p-8 font-[family-name:var(--font-geist-sans)]">
@@ -27,9 +25,7 @@ export default async function Home() {
                         {t("title")}
                     </h1>
                     <h2 className="text-xl">{t("about")}</h2>
-                    <h3 className="text-lg">
-                        {hello.greeting} {random}
-                    </h3>
+                    <h3 className="text-lg">{hello.greeting} (doesn't require client javascript)</h3>
                 </section>
 
                 <section aria-label="Getting Started Instructions">
@@ -87,7 +83,9 @@ export default async function Home() {
                         <Button variant="outline">Sign In</Button>
                     </SignInButton>
                     <UserButton />
-                    <ProtectedData />
+                    <Link href="/posts">
+                        <Button>Posts App</Button>
+                    </Link>
                 </section>
             </main>
         </div>

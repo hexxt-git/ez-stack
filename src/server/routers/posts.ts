@@ -28,7 +28,7 @@ export const postsRouter = createTRPCRouter({
                 data: {
                     content: input.content,
                     image: input.image,
-                    authorId: ctx.user.userId,
+                    authorId: ctx.user?.userId || ctx.auth?.userId,
                 },
             });
 
@@ -51,10 +51,16 @@ export const postsRouter = createTRPCRouter({
             },
         });
         return Promise.all(
-            posts.map(async (post) => ({
-                ...post,
-                author: await (await clerk).users.getUser(post.authorId),
-            }))
+            posts.map(async (post) => {
+                const author = await (await clerk).users.getUser(post.authorId);
+                return {
+                    ...post,
+                    author: {
+                        imageUrl: author.imageUrl,
+                        fullName: `${author.firstName} ${author.lastName}`,
+                    },
+                };
+            })
         );
     }),
 });

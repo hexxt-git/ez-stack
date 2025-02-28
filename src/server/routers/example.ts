@@ -8,9 +8,6 @@ const exampleRouter = createTRPCRouter({
             greeting: `Hello ${input}`,
         };
     }),
-    random: publicProcedure.query(() => {
-        return Math.floor(Math.random() * 1e6);
-    }),
     secret: privateProcedure.query(() => {
         return "this is a secret";
     }),
