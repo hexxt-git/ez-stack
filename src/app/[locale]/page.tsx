@@ -25,7 +25,7 @@ export default async function Home() {
                         {t("title")}
                     </h1>
                     <h2 className="text-xl">{t("about")}</h2>
-                    <h3 className="text-lg">{hello.greeting} (doesn't require client javascript)</h3>
+                    <h3 className="text-lg">{hello.greeting} (doesn&apos;t require client javascript)</h3>
                 </section>
 
                 <section aria-label="Getting Started Instructions">
