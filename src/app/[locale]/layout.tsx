@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import { Toaster } from "@/components/ui/sonner";
 import { TRPCReactProvider } from "@/lib/react-trpc";
 import { ClerkThemeProvider } from "@/components/clerk-theme-provider";
+import { PostHogProvider } from "@/components/posthog-provider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -70,11 +71,13 @@ export default async function LocaleLayout({
                             disableTransitionOnChange
                         >
                             <ClerkThemeProvider>
-                                <Toaster
-                                    position={locale === "ar" ? "bottom-left" : "bottom-right"}
-                                    richColors
-                                />
-                                {children}
+                                <PostHogProvider>
+                                    <Toaster
+                                        position={locale === "ar" ? "bottom-left" : "bottom-right"}
+                                        richColors
+                                    />
+                                    {children}
+                                </PostHogProvider>
                             </ClerkThemeProvider>
                         </ThemeProvider>
                     </NextIntlClientProvider>

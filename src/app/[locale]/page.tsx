@@ -63,6 +63,9 @@ export default async function Home() {
                         <li>
                             <strong>Minio</strong>: {t("tech.minio")}
                         </li>
+                        <li>
+                            <strong>PostHog</strong>: {t("tech.posthog")}
+                        </li>
                     </ol>
                 </section>
 

@@ -1,62 +1,63 @@
 {
-  "HomePage": {
-    "title": "Welcome to Ez-Stack",
-    "about": "Get started by editing this page",
-    "instructions": {
-      "editFile": "Get started by editing",
-      "saveChanges": "Save and see your changes instantly"
+    "HomePage": {
+        "title": "Welcome to Ez-Stack",
+        "about": "Get started by editing this page",
+        "instructions": {
+            "editFile": "Get started by editing",
+            "saveChanges": "Save and see your changes instantly"
+        },
+        "buttons": {
+            "deploy": "Deploy on Vercel",
+            "theme": {
+                "text": "Toggle theme",
+                "ariaLabel": "Switch to {theme} theme"
+            },
+            "drag": "Drag me",
+            "toast": "Show Toast"
+        },
+        "toasts": {
+            "info": "This is an info message",
+            "error": "This is an error message",
+            "success": "This is a success message",
+            "warning": "This is a warning message"
+        },
+        "tech": {
+            "nextJs": "Server-side rendering and file-based routing",
+            "nextIntl": "Simple internationalization and translation support",
+            "nextThemes": "Dynamically handles light/dark modes",
+            "tailwindCss": "Utility-first styling framework",
+            "shadcnUi": "Accessible, prebuilt UI components",
+            "zustand": "Minimal and efficient global state management",
+            "trpc": "Type-safe end-to-end APIs with zero boilerplate",
+            "clerk": "Authentication and user management for your application",
+            "prisma": "Modern database access for Node.js",
+            "minio": "Modern s3-compatible object storage client",
+            "framerMotion": "Simple and powerful animation library",
+            "posthog": "Open-source web analytics platform"
+        },
+        "drag-me": "drag me",
+        "toggle-theme": "toggle theme",
+        "deploy-on-vercel": "Deploy on vercel",
+        "noopener-noreferrer": "noopener noreferrer",
+        "save-and-see-your-changes-instantly": "Save and see your changes instantly.",
+        "get-started-by-editing": "Get started by editing",
+        "next-js-logo": "Next.js logo",
+        "global-state": "global state",
+        "server-state": "server state",
+        "input": {
+            "label": "example input"
+        },
+        "get-secret": "get the secret"
     },
-    "buttons": {
-      "deploy": "Deploy on Vercel",
-      "theme": {
-        "text": "Toggle theme",
-        "ariaLabel": "Switch to {theme} theme"
-      },
-      "drag": "Drag me",
-      "toast": "Show Toast"
-    },
-    "toasts": {
-      "info": "This is an info message",
-      "error": "This is an error message",
-      "success": "This is a success message",
-      "warning": "This is a warning message"
-    },
-    "tech": {
-      "nextJs": "Server-side rendering and file-based routing",
-      "nextIntl": "Simple internationalization and translation support",
-      "nextThemes": "Dynamically handles light/dark modes",
-      "tailwindCss": "Utility-first styling framework",
-      "shadcnUi": "Accessible, prebuilt UI components",
-      "zustand": "Minimal and efficient global state management",
-      "trpc": "Type-safe end-to-end APIs with zero boilerplate",
-      "clerk": "Authentication and user management for your application",
-      "prisma": "Modern database access for Node.js",
-      "minio": "Modern s3-compatible object storage client",
-      "framerMotion": "Simple and powerful animation library"
-    },
-    "drag-me": "drag me",
-    "toggle-theme": "toggle theme",
-    "deploy-on-vercel": "Deploy on vercel",
-    "noopener-noreferrer": "noopener noreferrer",
-    "save-and-see-your-changes-instantly": "Save and see your changes instantly.",
-    "get-started-by-editing": "Get started by editing",
-    "next-js-logo": "Next.js logo",
-    "global-state": "global state",
-    "server-state": "server state",
-    "input": {
-      "label": "example input"
-    },
-    "get-secret": "get the secret"
-  },
-  "Languages": {
-    "select": "Select language",
-    "en": "English",
-    "fr": "French",
-    "ar": "Arabic",
-    "popup": {
-      "title": "Choose your language",
-      "close": "Close language selector",
-      "current": "Current language: {language}"
+    "Languages": {
+        "select": "Select language",
+        "en": "English",
+        "fr": "French",
+        "ar": "Arabic",
+        "popup": {
+            "title": "Choose your language",
+            "close": "Close language selector",
+            "current": "Current language: {language}"
+        }
     }
-  }
 }

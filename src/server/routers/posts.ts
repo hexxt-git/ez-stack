@@ -16,7 +16,7 @@ export const postsRouter = createTRPCRouter({
             const url = await minioClient.presignedPutObject(
                 process.env.S3_BUCKET_NAME,
                 uniqueFileName,
-                60 * 60
+                60 * 60,
             );
 
             return { url, key: uniqueFileName };
@@ -60,7 +60,7 @@ export const postsRouter = createTRPCRouter({
                         fullName: `${author.firstName} ${author.lastName}`,
                     },
                 };
-            })
+            }),
         );
     }),
 });

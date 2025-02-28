@@ -1,62 +1,62 @@
 {
-  "HomePage": {
-    "title": "Bienvenue sur Ez-Stack",
-    "about": "Commencez par éditer cette page",
-    "instructions": {
-      "editFile": "Commencez par éditer",
-      "saveChanges": "Enregistrez et voyez vos modifications instantanément"
+    "HomePage": {
+        "title": "Bienvenue sur Ez-Stack",
+        "about": "Commencez par éditer cette page",
+        "instructions": {
+            "editFile": "Commencez par éditer",
+            "saveChanges": "Enregistrez et voyez vos modifications instantanément"
+        },
+        "buttons": {
+            "deploy": "Déployer sur Vercel",
+            "theme": {
+                "text": "Changer le thème",
+                "ariaLabel": "Passer au thème {theme}"
+            },
+            "drag": "Faites-moi glisser",
+            "toast": "Afficher le toast"
+        },
+        "toasts": {
+            "info": "Ceci est un message d'information",
+            "error": "Ceci est un message d'erreur",
+            "success": "Ceci est un message de succès",
+            "warning": "Ceci est un message d'avertissement"
+        },
+        "tech": {
+            "nextJs": "Rendu côté serveur et routage basé sur les fichiers",
+            "nextIntl": "Support international simple et traduction",
+            "nextThemes": "Gère dynamiquement les thèmes clair/sombre",
+            "tailwindCss": "Framework utilitaire-first pour le style",
+            "shadcnUi": "Composants UI accessibles prédéfinis",
+            "zustand": "Gestion d'état globale minimale et efficace",
+            "trpc": "APIs de bout en bout avec vérification des types sans code superflu",
+            "clerk": "Authentification et gestion des utilisateurs pour votre application",
+            "prisma": "Accès moderne aux bases de données pour Node.js",
+            "minio": "Client de stockage d'objets compatible s3 moderne",
+            "framerMotion": "Bibliothèque d'animations simple et puissante"
+        },
+        "drag-me": "faites-moi glisser",
+        "toggle-theme": "changer le thème",
+        "deploy-on-vercel": "Déployer sur Vercel",
+        "noopener-noreferrer": "noopener noreferrer",
+        "save-and-see-your-changes-instantly": "Enregistrez et voyez vos modifications instantanément.",
+        "get-started-by-editing": "Commencez par éditer",
+        "get-secret": "Obtenez le secret",
+        "global-state": "État mondial",
+        "input": {
+            "label": "Exemple d'entrée"
+        },
+        "server-state": "état du serveur",
+        "next-js-logo": "LOGO NEXT.JS"
     },
-    "buttons": {
-      "deploy": "Déployer sur Vercel",
-      "theme": {
-        "text": "Changer le thème",
-        "ariaLabel": "Passer au thème {theme}"
-      },
-      "drag": "Faites-moi glisser",
-      "toast": "Afficher le toast"
-    },
-    "toasts": {
-      "info": "Ceci est un message d'information",
-      "error": "Ceci est un message d'erreur",
-      "success": "Ceci est un message de succès",
-      "warning": "Ceci est un message d'avertissement"
-    },
-    "tech": {
-      "nextJs": "Rendu côté serveur et routage basé sur les fichiers",
-      "nextIntl": "Support international simple et traduction",
-      "nextThemes": "Gère dynamiquement les thèmes clair/sombre",
-      "tailwindCss": "Framework utilitaire-first pour le style",
-      "shadcnUi": "Composants UI accessibles prédéfinis",
-      "zustand": "Gestion d'état globale minimale et efficace",
-      "trpc": "APIs de bout en bout avec vérification des types sans code superflu",
-      "clerk": "Authentification et gestion des utilisateurs pour votre application",
-      "prisma": "Accès moderne aux bases de données pour Node.js",
-      "minio": "Client de stockage d'objets compatible s3 moderne",
-      "framerMotion": "Bibliothèque d'animations simple et puissante"
-    },
-    "drag-me": "faites-moi glisser",
-    "toggle-theme": "changer le thème",
-    "deploy-on-vercel": "Déployer sur Vercel",
-    "noopener-noreferrer": "noopener noreferrer",
-    "save-and-see-your-changes-instantly": "Enregistrez et voyez vos modifications instantanément.",
-    "get-started-by-editing": "Commencez par éditer",
-    "get-secret": "Obtenez le secret",
-    "global-state": "État mondial",
-    "input": {
-      "label": "Exemple d'entrée"
-    },
-    "server-state": "état du serveur",
-    "next-js-logo": "LOGO NEXT.JS"
-  },
-  "Languages": {
-    "select": "Choisissez la langue",
-    "en": "Anglais",
-    "fr": "Français",
-    "ar": "Arabe",
-    "popup": {
-      "title": "Choisissez votre langue",
-      "close": "Fermer le sélecteur de langue",
-      "current": "Langue actuelle: {language}"
+    "Languages": {
+        "select": "Choisissez la langue",
+        "en": "Anglais",
+        "fr": "Français",
+        "ar": "Arabe",
+        "popup": {
+            "title": "Choisissez votre langue",
+            "close": "Fermer le sélecteur de langue",
+            "current": "Langue actuelle: {language}"
+        }
     }
-  }
 }
