@@ -69,6 +69,7 @@ export default async function Home() {
                 <section
                     className="flex gap-4 items-center flex-wrap max-w-140"
                     aria-label="Interactive Elements"
+                    suppressHydrationWarning
                 >
                     <Link href="https://vercel.com" target="_blank" rel="noopener noreferrer">
                         <Button>{t("buttons.deploy")}</Button>
