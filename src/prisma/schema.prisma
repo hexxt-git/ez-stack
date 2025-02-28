@@ -12,7 +12,8 @@ datasource db {
 
 model Post {
     id        Int      @id @default(autoincrement())
-    authorId  String
+    authorId  String // from clerk
     content   String
+    image     String?
     createdAt DateTime @default(now())
 }

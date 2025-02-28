@@ -9,6 +9,7 @@ export default function PostsPage() {
     const { user } = useUser();
     const { data: posts, refetch } = api.posts.getAll.useQuery();
 
+    const getPresignedUrlMutation = api.posts.getPresignedUrl.useMutation().mutateAsync;
     const createPostMutation = api.posts.post.useMutation({
         onSuccess: refetch,
     }).mutate;
@@ -21,17 +22,32 @@ export default function PostsPage() {
         deletePostMutation({ postId });
     };
 
-    const sendPost = (form: FormData) => {
+    const sendPost = async (form: FormData) => {
+        const file = form.get("file") as File;
+        let image: string | undefined = undefined;
+        if (file) {
+            const { url, key } = await getPresignedUrlMutation({ filename: file.name });
+
+            await fetch(url, {
+                method: "PUT",
+                body: file,
+                headers: {
+                    "Content-Type": file.type,
+                    "Access-Control-Allow-Origin": "*",
+                },
+            });
+            image = key;
+        }
         const content = String(form.get("content") || "");
-        if (content) createPostMutation({ content });
+        if (content) createPostMutation({ content, image });
     };
 
     return (
-        <div className="relative min-h-dvh center p-4">
+        <div className="relative py-12 md:min-h-dvh center p-4">
             <div className="absolute top-0 end-0 m-2">
                 <UserButton />
             </div>
-            <div className="w-82 max-w-full flex flex-col gap-4">
+            <div className="w-120 max-w-full flex flex-col gap-4">
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
@@ -44,6 +60,7 @@ export default function PostsPage() {
                         new post
                     </label>
                     <Input type="text" id="content" name="content" className="mt-2" />
+                    <Input type="file" id="file" name="file" className="mt-2" />
                     <Button type="submit" className="float-end" size="sm">
                         Send
                     </Button>
@@ -60,16 +77,33 @@ export default function PostsPage() {
                                   {post.author.lastName} {post.author.firstName}{" "}
                               </h2>
                               <p>{post.content}</p>
+                              {post.image && (
+                                  <img
+                                      src={post.image}
+                                      alt={post.content}
+                                      className="w-full aspect-square object-fit rounded-sm"
+                                  />
+                              )}
                               {post.authorId === user?.id && (
                                   <Button
                                       variant="destructive"
                                       size="sm"
-                                      className="float-end"
+                                      className="float-end mb-0"
                                       onClick={() => deletePost({ postId: post.id })}
                                   >
                                       delete{" "}
                                   </Button>
                               )}
+                              <p className="text-muted-foreground text-sm">
+                                  {new Date(post.createdAt).toLocaleString("en-CA", {
+                                      year: "numeric",
+                                      month: "2-digit",
+                                      day: "2-digit",
+                                      hour: "2-digit",
+                                      minute: "2-digit",
+                                      hour12: false,
+                                  })}
+                              </p>
                           </div>
                       ))
                     : "loading..."}

@@ -2,20 +2,39 @@ import { z } from "zod";
 import { createTRPCRouter, privateProcedure } from "../trpc";
 import { prisma } from "@/server/prisma";
 import { clerkClient } from "@clerk/nextjs/server";
+import { minioClient } from "../minio";
 
 const clerk = clerkClient();
 
 export const postsRouter = createTRPCRouter({
-    post: privateProcedure.input(z.object({ content: z.string() })).mutation(async ({ ctx, input }) => {
-        const post = await prisma.post.create({
-            data: {
-                content: input.content,
-                authorId: ctx.user.userId,
-            },
-        });
+    getPresignedUrl: privateProcedure
+        .input(z.object({ filename: z.string() }))
+        .mutation(async ({ input }) => {
+            const uniqueFileName = `${crypto.randomUUID()}-${input.filename}`;
 
-        console.log(post);
-    }),
+            // Generate a pre-signed URL (valid for 1 hour)
+            const url = await minioClient.presignedPutObject(
+                process.env.S3_BUCKET_NAME,
+                uniqueFileName,
+                60 * 60
+            );
+
+            return { url, key: uniqueFileName };
+        }),
+    post: privateProcedure
+        .input(z.object({ content: z.string(), image: z.string().optional() }))
+        .mutation(async ({ ctx, input }) => {
+            const post = await prisma.post.create({
+                data: {
+                    content: input.content,
+                    image: input.image,
+                    authorId: ctx.user.userId,
+                },
+            });
+
+            console.log(post);
+        }),
+
     delete: privateProcedure.input(z.object({ postId: z.number() })).mutation(async ({ ctx, input }) => {
         await prisma.post.delete({
             where: {
@@ -24,6 +43,7 @@ export const postsRouter = createTRPCRouter({
             },
         });
     }),
+
     getAll: privateProcedure.query(async () => {
         const posts = await prisma.post.findMany({
             orderBy: {

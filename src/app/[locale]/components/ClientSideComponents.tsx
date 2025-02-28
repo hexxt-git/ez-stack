@@ -82,6 +82,7 @@ export function ServerIncrementButton() {
 }
 export function ProtectedData() {
     const { data, refetch } = api.example.secret.useQuery(undefined, { enabled: false });
+    const t = useTranslations("HomePage");
 
     const getSecret = () => {
         refetch();
@@ -91,7 +92,7 @@ export function ProtectedData() {
 
     return (
         <Button onClick={getSecret} variant="secondary">
-            get secret
+            {t("get-secret")}
         </Button>
     );
 }

@@ -7,7 +7,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function LanguageSwitch({ type = "normal" }: { type?: "tiny" | "normal" | "long" }) {
-    const t = useTranslations("HomePage.languages");
+    const t = useTranslations("Languages");
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const currentLocale = useLocale();

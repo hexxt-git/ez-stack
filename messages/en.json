@@ -21,17 +21,6 @@
       "success": "This is a success message",
       "warning": "This is a warning message"
     },
-    "languages": {
-      "select": "Select language",
-      "en": "English",
-      "fr": "French",
-      "ar": "Arabic",
-      "popup": {
-        "title": "Choose your language",
-        "close": "Close language selector",
-        "current": "Current language: {language}"
-      }
-    },
     "tech": {
       "nextJs": "Server-side rendering and file-based routing",
       "nextIntl": "Simple internationalization and translation support",
@@ -40,8 +29,10 @@
       "shadcnUi": "Accessible, prebuilt UI components",
       "zustand": "Minimal and efficient global state management",
       "trpc": "Type-safe end-to-end APIs with zero boilerplate",
-      "mongoose": "Elegant MongoDB object modeling for Node.js",
-      "clerk": "Authentication and user management for your application"
+      "clerk": "Authentication and user management for your application",
+      "prisma": "Modern database access for Node.js",
+      "minio": "Modern s3-compatible object storage client",
+      "framerMotion": "Simple and powerful animation library"
     },
     "drag-me": "drag me",
     "toggle-theme": "toggle theme",
@@ -54,6 +45,18 @@
     "server-state": "server state",
     "input": {
       "label": "example input"
+    },
+    "get-secret": "get the secret"
+  },
+  "Languages": {
+    "select": "Select language",
+    "en": "English",
+    "fr": "French",
+    "ar": "Arabic",
+    "popup": {
+      "title": "Choose your language",
+      "close": "Close language selector",
+      "current": "Current language: {language}"
     }
   }
 }

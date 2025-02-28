@@ -11,7 +11,7 @@ import {
 import { LanguageSwitch } from "@/components/language-switch";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { api } from "@/lib/server";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 
 export default async function Home() {
     const t = await getTranslations("HomePage");
@@ -47,6 +47,9 @@ export default async function Home() {
                             <strong>Tailwind CSS</strong>: {t("tech.tailwindCss")}
                         </li>
                         <li>
+                            <strong>Framer Motion</strong>: {t("tech.framerMotion")}
+                        </li>
+                        <li>
                             <strong>Shadcn-UI</strong>: {t("tech.shadcnUi")}
                         </li>
                         <li>
@@ -56,16 +59,19 @@ export default async function Home() {
                             <strong>tRPC</strong>: {t("tech.trpc")}
                         </li>
                         <li>
-                            <strong>Mongoose</strong>: {t("tech.mongoose")}
+                            <strong>Clerk</strong>: {t("tech.clerk")}
                         </li>
                         <li>
-                            <strong>Clerk</strong>: {t("tech.clerk")}
+                            <strong>Prisma</strong>: {t("tech.prisma")}
+                        </li>
+                        <li>
+                            <strong>Minio</strong>: {t("tech.minio")}
                         </li>
                     </ol>
                 </section>
 
                 <section
-                    className="flex gap-4 items-center flex-wrap max-w-[400px]"
+                    className="flex gap-4 items-center flex-wrap max-w-140"
                     aria-label="Interactive Elements"
                 >
                     <Link href="https://vercel.com" target="_blank" rel="noopener noreferrer">
