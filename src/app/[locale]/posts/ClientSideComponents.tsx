@@ -257,7 +257,7 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
     const handleCreatePost = async (content: string, file: File | null) => {
         setIsSubmitting(true);
 
-        let image: string | undefined = undefined;
+        let media: string | undefined = undefined;
 
         if (file && file.name) {
             try {
@@ -272,7 +272,7 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
                     },
                 });
 
-                image = key;
+                media = key;
             } catch (error) {
                 console.error("Error uploading file:", error);
                 setIsSubmitting(false);
@@ -281,7 +281,7 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
         }
 
         if (content) {
-            createPostMutation({ content, image });
+            createPostMutation({ content, media });
         } else {
             setIsSubmitting(false);
         }
