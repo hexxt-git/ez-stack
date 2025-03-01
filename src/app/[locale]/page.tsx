@@ -29,7 +29,7 @@ export default async function Home() {
                 </section>
 
                 <section aria-label="Getting Started Instructions">
-                    <ol className="list-inside list-decimal text-center sm:text-start font-[family-name:var(--font-geist-mono)] space-y-2">
+                    <ol className="list-inside list-decimal font-[family-name:var(--font-geist-mono)] space-y-2 text-balance">
                         <li>
                             <strong>Next.js</strong>: {t("tech.nextJs")}
                         </li>

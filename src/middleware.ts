@@ -6,20 +6,16 @@ const intlMiddleware = createMiddleware(routing);
 
 const isProtectedRoute = createRouteMatcher(["/(en|fr|ar)/posts(.*)"]);
 
+const localized = createRouteMatcher(["/(en|fr|ar)(.*)"]);
+
 export default clerkMiddleware(async (auth, request) => {
     if (isProtectedRoute(request)) await auth.protect();
 
-    if (!request.nextUrl.pathname.startsWith("/api")) {
+    if (localized(request)) {
         return intlMiddleware(request);
     }
 });
 
 export const config = {
-    matcher: [
-        "/(en|fr|ar)(.*)",
-        // Skip Next.js internals and all static files, unless found in search params
-        "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
-        // Always run for API routes
-        "/(api|trpc)(.*)",
-    ],
+    matcher: ["/(.*)"],
 };
