@@ -45,8 +45,6 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
                 },
             });
 
-            console.log(res);
-
             image = key;
         }
         const content = String(form.get("content") || "");
@@ -90,7 +88,7 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
                               <p>{post.content}</p>
                               {post.image && (
                                   <img
-                                      src={post.image}
+                                      src={process.env.S3_PUBLIC_URL + "/" + post.image}
                                       alt={post.content}
                                       className="w-full aspect-square object-fit rounded-sm"
                                   />
