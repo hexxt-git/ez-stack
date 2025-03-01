@@ -22,12 +22,12 @@ export const postsRouter = createTRPCRouter({
             return { url, key: uniqueFileName };
         }),
     post: privateProcedure
-        .input(z.object({ content: z.string(), image: z.string().optional() }))
+        .input(z.object({ content: z.string(), media: z.string().optional() }))
         .mutation(async ({ ctx, input }) => {
-            const post = await prisma.post.create({
+            await prisma.post.create({
                 data: {
                     content: input.content,
-                    image: input.image,
+                    media: input.media,
                     authorId: ctx.user?.userId || ctx.auth?.userId,
                 },
             });

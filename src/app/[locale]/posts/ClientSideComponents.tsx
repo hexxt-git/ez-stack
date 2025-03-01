@@ -132,18 +132,25 @@ function PostCard({ post, canDelete, onDelete }: { post: Post; canDelete: boolea
                 {post.content}
             </motion.p>
 
-            {post.image && (
+            {post.media && (
                 <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     transition={{ duration: 0.4 }}
                     className="overflow-hidden"
                 >
-                    <img
-                        src={process.env.NEXT_PUBLIC_S3_PUBLIC_URL + "/" + post.image}
-                        alt={post.content}
-                        className="w-full rounded-sm"
-                    />
+                    {post.media.match(/\.(mp4|webm|ogg|avi|mov|mkv)$/) ? (
+                        <video
+                            src={process.env.NEXT_PUBLIC_S3_PUBLIC_URL + "/" + post.media}
+                            className="w-full rounded-sm"
+                            controls
+                        />
+                    ) : (
+                        <img
+                            src={process.env.NEXT_PUBLIC_S3_PUBLIC_URL + "/" + post.media}
+                            className="w-full rounded-sm"
+                        />
+                    )}
                 </motion.div>
             )}
 

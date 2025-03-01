@@ -14,6 +14,6 @@ model Post {
     id        Int      @id @default(autoincrement())
     authorId  String // from clerk
     content   String
-    image     String?
+    media     String?
     createdAt DateTime @default(now())
 }
