@@ -15,10 +15,13 @@ export interface PostsClientProps {
 export default function PostsClient({ initialPosts }: PostsClientProps) {
     const { user } = useUser();
     const { data: posts = initialPosts, refetch } = api.posts.getAll.useQuery();
+
     const getPresignedUrlMutation = api.posts.getPresignedUrl.useMutation().mutateAsync;
+
     const createPostMutation = api.posts.post.useMutation({
         onSuccess: refetch,
     }).mutate;
+
     const deletePostMutation = api.posts.delete.useMutation({
         onSuccess: refetch,
     }).mutate;
@@ -32,7 +35,8 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
         let image: string | undefined = undefined;
         if (file.name) {
             const { url, key } = await getPresignedUrlMutation({ filename: file.name });
-            await fetch(url, {
+
+            const res = await fetch(url, {
                 method: "PUT",
                 body: file,
                 headers: {
@@ -40,6 +44,9 @@ export default function PostsClient({ initialPosts }: PostsClientProps) {
                     "Access-Control-Allow-Origin": "*",
                 },
             });
+
+            console.log(res);
+
             image = key;
         }
         const content = String(form.get("content") || "");
