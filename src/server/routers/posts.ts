@@ -16,7 +16,7 @@ export const postsRouter = createTRPCRouter({
             const url = await minioClient.presignedPutObject(
                 process.env.S3_BUCKET_NAME,
                 uniqueFileName,
-                60 * 60,
+                60 * 60
             );
 
             return { url, key: uniqueFileName };
@@ -31,8 +31,6 @@ export const postsRouter = createTRPCRouter({
                     authorId: ctx.user?.userId || ctx.auth?.userId,
                 },
             });
-
-            console.log(post);
         }),
 
     delete: privateProcedure.input(z.object({ postId: z.number() })).mutation(async ({ ctx, input }) => {
@@ -60,7 +58,7 @@ export const postsRouter = createTRPCRouter({
                         fullName: `${author.firstName} ${author.lastName}`,
                     },
                 };
-            }),
+            })
         );
     }),
 });
