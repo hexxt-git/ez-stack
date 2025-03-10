@@ -7,8 +7,7 @@ const counterRouter = createTRPCRouter({
         return { count };
     }),
     increment: publicProcedure.mutation(async () => {
-        await new Promise((res) => setTimeout(res, 1000));
-        if (Math.random() < 0.1) throw new Error("random error");
+        await new Promise((res) => setTimeout(res, 700));
         return ++count;
     }),
 });
