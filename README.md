@@ -37,6 +37,13 @@ EZ-Stack is designed for rapid development of feature-rich web applications. It 
 -   **Framer Motion:** Provides advanced animation capabilities for a more interactive and dynamic user experience.
 -   **Tailwind CSS / Custom UI Library:** Facilitates rapid UI development and consistent styling.
 -   **Amazon S3:** Handles media storage through secure, presigned URL uploads.
+-   **Prisma:** Modern database access for Node.js, providing a type-safe ORM.
+-   **Zustand:** Minimal and efficient global state management.
+-   **PostHog:** Open-source web analytics platform.
+-   **MinIO:** Modern S3-compatible object storage client.
+-   **Next-Intl:** Simple internationalization and translation support.
+-   **Next-Themes:** Dynamically handles light/dark modes.
+-   **Shadcn/UI:** Accessible, prebuilt UI components.
 
 ## Features
 
@@ -46,6 +53,7 @@ EZ-Stack is designed for rapid development of feature-rich web applications. It 
 -   **Interactive UI:** Smooth animations and responsive design via Framer Motion and Tailwind CSS.
 -   **Media Uploads:** Efficient file handling using presigned URLs to Amazon S3.
 -   **Internationalization Ready:** Structured to support multiple locales.
+-   **Analytics:** Integrated with PostHog for tracking user interactions and analytics.
 
 ## Setup and Installation
 
